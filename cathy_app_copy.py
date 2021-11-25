@@ -99,6 +99,7 @@ def scenario():
     'A global success with these groups, such a dazzling disappearance you could say? But what financial success!'
     'It is then without counting on our 5 super brains able to predict you which best combinations of musical data can bring you to the artistic and financial recognition !'
 
+    " "
     st.subheader('Who are we?')
 
     'Alexandra, Catherine, Bérenger, Guillaume and Nizar.'
@@ -107,21 +108,21 @@ def scenario():
 
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.image('assets/brains.png')
+        st.image('assets/brain.png', width = 300)
 
     'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
     'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
 
     col1, col2, col3, col4, col5 = st.columns(5)
     with col2:
-        st.image('assets/money_rain.gif')   
+        st.image('assets/money_rain.gif', width = 280)   
     with col4:
         st.image('assets/picsou.gif')   
 
     'So yes ! It\'s a pure commercial product, but it works!'
     'For your information, The beatles have also been categorized as a boy band!'
 
-
+    " "
     st.subheader('Keep a cool head, Data Yoyo is here')
 
     'We have understood that if it is in our head, it is achievable, so we did it !'
@@ -132,7 +133,7 @@ def scenario():
     'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
 
 
-
+    " "
     st.subheader('Attention à la chute !')
 
     'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
