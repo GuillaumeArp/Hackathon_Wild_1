@@ -31,8 +31,13 @@ def load_data_polar():
 def load_data_ml():
     return pd.read_csv('data/music_ml.csv.zip')
 
+@st.cache
+def load_data_pop_genre():
+    return pd.read_csv('data/pop_genre.csv.zip')
+
 data_polar_top = load_data_polar()
 data_ml = load_data_ml()
+popularity_genre = load_data_pop_genre()
 
 
 st.title('Music Track Analysis Project')
