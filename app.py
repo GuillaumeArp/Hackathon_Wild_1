@@ -18,7 +18,7 @@ def _max_width_():
 
 _max_width_()
 
-st.title('Music Analysis Project')
+st.title('Music Track Analysis Project')
 
 def main():
 
@@ -45,10 +45,10 @@ def home():
 
     st.subheader('About this project')
 
-    'The purpose of this project is to help a new movie theatre owner to get a better idea what the film industry looks like at the moment, and how it has evolved over the years.'
-    'Then, we will provide a recommendation algorithm to help him select the best movies to play at the theatre, based on the tastes of his audience.'
-    ''
+    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
+    ''
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -75,10 +75,24 @@ def home():
         #st.image('')
         
 def scenario():
-    pass
+    
+    st.subheader('Scenario')
+    
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
 
 def music_details():
-    pass
+    
+    st.subheader('What makes a track popular?')
+    
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
 
 def popularity_estimator():
-    pass
+    
+    st.subheader('Predicting if a track will be popular or not')
+    
+    'Explanation text'
+    
+    valence = st.slider(label='valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+    
+if __name__ == "__main__":
+    main()
