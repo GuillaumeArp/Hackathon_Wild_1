@@ -30,6 +30,7 @@ def load_data_ml():
 data_polar_top = load_data_polar()
 data_ml = load_data_ml()
 
+
 st.title('Music Track Analysis Project')
 
 def main():
@@ -48,6 +49,7 @@ def main():
         })
 
     with st.sidebar:
+        st.image('assets/logo_data_yoyo.png', width=200)
         page = st.selectbox("Choose a page", tuple(pages.keys()))
 
     pages[page]()
@@ -55,6 +57,7 @@ def main():
 
 def home():
 
+    st.image('assets/logo_data_yoyo.png', width=400)
     st.subheader('About this project')
 
     'This project was completed during a 33 hours hackathon, and the subject is music.'
@@ -103,7 +106,7 @@ def music_details():
                         color_discrete_sequence=px.colors.sequential.Plasma_r)
     fig.update_traces(fill='toself')
     
-    fig.update_layout(width=800, height=700)
+    fig.update_layout(height=900)
     st.plotly_chart(fig, use_container_width=True)
 
 def popularity_estimator():
@@ -121,13 +124,13 @@ def popularity_estimator():
         valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         danceability = st.slider(label='Danceability', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=-25.0, step=0.1)
-        duration_ms = st.slider(label='Duration in seconds', min_value=90, max_value=900, value=210, step=1)
+        temp = st.slider(label='Tempo', min_value=32, max_value=242, value=120, step=1)
         
     with col3:
         energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        key = st.select_slider(label='Key', options=key_list)
+        duration_ms = st.slider(label='Duration', min_value=90, max_value=900, value=210, step=1)
         
     with col5:
         liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
