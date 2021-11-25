@@ -101,8 +101,8 @@ def scenario():
 
     st.subheader('Who are we?')
 
-    'Alexandra, Catherine, Bérenger, Guillaume and Nizar.
-    'We all come from the wild code school with different backgrounds but one point brought us together:
+    'Alexandra, Catherine, Bérenger, Guillaume and Nizar.'
+    'We all come from the wild code school with different backgrounds but one point brought us together:'
     st.markdown("<h4 style = 'text-align : center'> 'We miss the boy bands (and the money too)! </h4>", unsafe_allow_html=True)
 
         col1, col2, col3 = st.columns(3)
@@ -142,26 +142,6 @@ def scenario():
     with col2:
         st.image('assets/logo_data_yoyo.png')
     
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def music_details():
