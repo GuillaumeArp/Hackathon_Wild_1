@@ -18,6 +18,12 @@ def _max_width_():
 
 _max_width_()
 
+@st.cache
+def load_data_polar():
+    return pd.read_csv('data/top_polar.csv.zip')
+
+data_polar_top = load_data_polar()
+
 st.title('Music Track Analysis Project')
 
 def main():
