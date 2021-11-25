@@ -114,7 +114,7 @@ def scenario():
 
     col1, col2, col3, col4, col5 = st.columns(5)
     with col2:
-        st.image('assets/money_rain.jpg')   
+        st.image('assets/money_rain.gif')   
     with col4:
         st.image('assets/picsou.gif')   
 
