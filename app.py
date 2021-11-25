@@ -30,7 +30,7 @@ def load_data_ml():
 data_polar_top = load_data_polar()
 data_ml = load_data_ml()
 
-#st.image('asset')
+
 st.title('Music Track Analysis Project')
 
 def main():
@@ -49,6 +49,7 @@ def main():
         })
 
     with st.sidebar:
+        st.image('assets/logo_data_yoyo.png', width=200)
         page = st.selectbox("Choose a page", tuple(pages.keys()))
 
     pages[page]()
@@ -56,6 +57,7 @@ def main():
 
 def home():
 
+    st.image('assets/logo_data_yoyo.png', width=400)
     st.subheader('About this project')
 
     'This project was completed during a 33 hours hackathon, and the subject is music.'
@@ -128,7 +130,7 @@ def popularity_estimator():
         energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        key = st.select_slider(label='Key', options=key_list)
+        duration_ms = st.slider(label='Duration', min_value=90, max_value=900, value=210, step=1)
         
     with col5:
         liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
