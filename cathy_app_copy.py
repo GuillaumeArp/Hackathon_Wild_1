@@ -77,8 +77,25 @@ def home():
 def scenario():
     
     st.subheader('Scenario')
+
+    st.image('assets/the-osmonds-musical.jpg')
     
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
+    st.title('The story')
+
+    'It all started in the 60s with the arrival of the first boy bands.'
+    'This successful term was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
+    'Others have started to ride the wave, and in particular The Jackson five, which will form the basis of this new musical approach that will be the boys band.'
+
+    'Finally definition is simple : Omnipresence of voices sung in chorus, synchronized attitude and songs that could seduce young girls.'
+    'Yes yes, only young girls ...'
+
+    'Music is like fashion, it\'s cyclical. With the popularity running out of control, the record companies started to get ideas.'
+    '30 years later, the same excitement with the new boys bands, this time with young girls who are part of the game (the spice girls not to mention them).'
+
+    st.image('https://media.giphy.com/media/wR4bJk4jF5Tl6/giphy.gif')
+
+    'A global success with these groups, such a dazzling disappearance you could say? But what financial success!'
+    'It is then without counting on our 5 super brains able to predict you which best combinations of musical data can bring you to the artistic and financial recognition !'
 
 def music_details():
     
