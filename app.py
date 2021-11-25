@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
 
@@ -22,7 +23,12 @@ _max_width_()
 def load_data_polar():
     return pd.read_csv('data/top_polar.csv.zip')
 
+@st.cache
+def load_data_ml():
+    return pd.read_csv('data/music_ml.csv.zip')
+
 data_polar_top = load_data_polar()
+data_ml = load_data_ml()
 
 st.title('Music Track Analysis Project')
 
@@ -70,13 +76,13 @@ def home():
         #st.image('')    
     
     ''    
-    col4, col5 = st.columns(2)
+    col4, col5, col6 = st.columns(3)
     
     with col4:
         st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
         st.image('assets/cath.png')
         
-    with col5:
+    with col6:
         st.markdown('[Bérenger Queune](https://github.com/BerengerQueune)')
         #st.image('')
         
@@ -90,7 +96,15 @@ def music_details():
     
     st.subheader('What makes a track popular?')
     
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
+    'Polar chart showing top music characteristics.'
+    
+    carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
+    fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
+                        color_discrete_sequence=px.colors.sequential.Plasma_r)
+    fig.update_traces(fill='toself')
+    
+    fig.update_layout(width=800, height=700)
+    st.plotly_chart(fig, use_container_width=True)
 
 def popularity_estimator():
     
