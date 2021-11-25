@@ -76,12 +76,12 @@ def home():
         
 def scenario():
     
-    st.subheader('Scenario')
+    st.subheader('The story')
 
+    col1, col2, col3 = st.columns(3)
+    with col2:
     st.image('assets/the-osmonds-musical.jpg')
     
-    st.title('The story')
-
     'It all started in the 60s with the arrival of the first boy bands.'
     'This successful term was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
     'Others have started to ride the wave, and in particular The Jackson five, which will form the basis of this new musical approach that will be the boys band.'
@@ -92,10 +92,77 @@ def scenario():
     'Music is like fashion, it\'s cyclical. With the popularity running out of control, the record companies started to get ideas.'
     '30 years later, the same excitement with the new boys bands, this time with young girls who are part of the game (the spice girls not to mention them).'
 
-    st.image('https://media.giphy.com/media/wR4bJk4jF5Tl6/giphy.gif')
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/Past_time.gif')
 
     'A global success with these groups, such a dazzling disappearance you could say? But what financial success!'
     'It is then without counting on our 5 super brains able to predict you which best combinations of musical data can bring you to the artistic and financial recognition !'
+
+    st.subheader('Who are we?')
+
+    'Alexandra, Catherine, Bérenger, Guillaume and Nizar.
+    'We all come from the wild code school with different backgrounds but one point brought us together:
+    st.markdown("<h4 style = 'text-align : center'> 'We miss the boy bands (and the money too)! </h4>", unsafe_allow_html=True)
+
+        col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/brainstorming_members.jpg')
+
+    'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
+    'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
+
+         col1, col2, col3, col4, col5 = st.columns(5)
+    with col2:
+        st.image('assets/money_rain.jpg')   
+    with col4:
+        st.image('assets/picsou.gif')   
+
+    'So yes ! It\'s a pure commercial product, but it works!'
+    'For your information, The beatles have also been categorized as a boy band!'
+
+
+    st.subheader('Keep a cool head, Data Yoyo is here')
+
+    'We have understood that if it is in our head, it is achievable, so we did it !'
+
+    'From the spotify database, we asked ourselves with what parameters we could predict the popularity of a title.'
+    'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the popularity_estimator page.'
+    'To present our demo to you, we have selected several titles from our personal preferences.'
+    'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
+
+
+
+    st.subheader('Attention à la chute !')
+
+    'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
+    'But we are working on it for the next datathon :)'
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/logo_data_yoyo.png')
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def music_details():
     
