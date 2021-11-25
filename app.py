@@ -177,10 +177,7 @@ def popularity_estimator():
         y = data_ml['popularity_score']
         X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75)
 
-
-
-        
-
+      
         # Random Forest
         rfc = RandomForestClassifier(n_estimators=8)
         rfc.fit(X_train, y_train)
