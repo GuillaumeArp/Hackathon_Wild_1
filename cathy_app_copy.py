@@ -132,6 +132,8 @@ def popularity_estimator():
         acousticness = st.slider(label='Acousticness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         genre = st.select_slider(label='Genre', options=genre_list)
         mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
+        
+
     
 if __name__ == "__main__":
     main()

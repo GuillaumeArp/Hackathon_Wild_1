@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
 
@@ -49,7 +52,7 @@ def main():
         })
 
     with st.sidebar:
-        st.image('assets/logo_data_yoyo.png', width=200)
+        st.image('assets/logo_data_yoyo.png', width=300)
         page = st.selectbox("Choose a page", tuple(pages.keys()))
 
     pages[page]()
@@ -128,6 +131,8 @@ def popularity_estimator():
     
     'Explanation text'
     
+    
+    
     genre_list = ["Children's Music", 'Comedy', 'Soundtrack', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'Movie', 'A Capella']
     
     col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
@@ -150,7 +155,99 @@ def popularity_estimator():
         genre = st.select_slider(label='Genre', options=genre_list, value='Pop')
         mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
         
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
+        if mode == 'Minor':
+            mode = 0
+        else:
+            mode = 1
+        
+    def algo_popularity():
+
+        df_popular = pd.DataFrame()
+
+        cols = ['acousticness', 'danceability', 'duration_ms', 'energy',
+       'instrumentalness', 'liveness', 'loudness', 'mode',
+       'speechiness', 'tempo', 'valence', 'A Capella',
+       'Alternative', 'Anime', 'Blues', "Children's Music",
+       'Classical', 'Comedy', 'Country', 'Dance', 'Electronic', 'Folk',
+       'Hip-Hop', 'Indie', 'Jazz', 'Opera', 'Pop', 'R&B', 'Rap',
+       'Reggae', 'Reggaeton', 'Rock', 'Ska', 'Soul', 'World']
+
+        X = data_ml[cols]
+        y = data_ml['popularity_score']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75)
+
+
+        scaler = StandardScaler().fit(X_train)
+
+        # Your scaler model can now transform your data
+        X_train_scaled = scaler.transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+
+        model = LogisticRegression(max_iter=20).fit(X_train_scaled,y_train)
+
+        dataset_columns = ['track_name']
+
+        df_popular = pd.DataFrame(columns=dataset_columns)
+
+        genres = ['A Capella',
+            'Alternative', 'Anime', 'Blues', "Children's Music",
+            'Classical', 'Comedy', 'Country', 'Dance', 'Electronic', 'Folk',
+            'Hip-Hop', 'Indie', 'Jazz', 'Opera', 'Pop', 'R&B', 'Rap',
+            'Reggae', 'Reggaeton', 'Rock', 'Ska', 'Soul', 'World']
+
+        genres = sorted(genres, reverse=True)
+
+
+
+        for i in genres:
+            if genre == i:
+                df_popular.insert(1, i, [1])
+            else:
+                df_popular.insert(1, i, [0])
+                
+        df_popular.insert(1, "valence", [valence])
+        df_popular.insert(1, "tempo", [tempo])
+        df_popular.insert(1, "speechiness", [speechiness])
+        df_popular.insert(1, "mode", [mode])
+        df_popular.insert(1, "loudness", [loudness])
+        df_popular.insert(1, "liveness", [liveness])
+        df_popular.insert(1, "instrumentalness", [instrumentalness])
+        df_popular.insert(1, "energy", [energy])
+        df_popular.insert(1, "duration_ms", [duration_ms])
+        df_popular.insert(1, "danceability", [danceability])
+        df_popular.insert(1, "acousticness", [acousticness])
+
+        df_popular["popularity_score"] = model.predict(df_popular[cols])
+
+        resultat = df_popular["popularity_score"].iloc[0]
+
+        return resultat
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write(" ")
+        
+    with col2:
+        if st.button('add'):
+            #########
+            resultat = algo_popularity()
+            if resultat == 1:
+                st.write("bravo c'est 1 lol")
+            elif resultat == 2:
+                st.write("bravo c'est 2 lol")
+            elif resultat == 3:
+                st.write("bravo c'est 3 lol")
+            elif resultat == 4:
+                st.write("bravo c'est 4 lol")
+            elif resultat == 5:
+                st.write("bravo c'est 5 lol")
+            #########
+
+        
+    ''    
+    with col3:
+        st.write(" ")
     
 if __name__ == "__main__":
     main()
