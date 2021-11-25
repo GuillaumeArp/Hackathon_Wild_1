@@ -122,5 +122,19 @@ def popularity_estimator():
         genre = st.select_slider(label='Genre', options=genre_list)
         mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
     
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.write(" ")
+        
+    with col2:
+        if st.button('add'):
+            result = add(1, 2)
+            st.write('result: %s' % result)
+        
+    ''    
+    with col3:
+        st.write(" ")
+
 if __name__ == "__main__":
     main()
