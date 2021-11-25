@@ -1,5 +1,3 @@
-plotly==5.3.1
-chart_studio
+pandas
+numpy
 scikit-learn
-IMDbPY
-matplotlib

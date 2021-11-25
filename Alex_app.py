@@ -117,11 +117,23 @@ def music_details():
                     )
     st.plotly_chart(fig, use_container_width=True)
     "As we can see, the most popular genre is Pop with a mean popularity rate of 66.59. "
-    "Does the hit songs have common features? We sorted the data to keep only songs with popularity over 80 to see that."
+    
+    "In our exploratory data analysis we've seen that the popularity is highly correlated with the danceability. So, do the most popular genres have the higher danceability?"
+    fig = px.bar_polar(popularity_genre, r=popularity_genre['danceability'],
+    theta = popularity_genre['genre'], template="plotly_dark", color= 'popularity', 
+    color_continuous_scale=px.colors.diverging.Temps,
+    title = "Danceability by genre")
+    fig.update_layout(width=1000, 
+                      height=600, 
+                      title= {'x' : 0.5})
+    st.plotly_chart(fig, use_container_width=True)
+    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit !"
+    
+    "Let's see if the hit songs have common features. We sorted the data to keep only songs with popularity over 80 to see that."
       
     carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
     fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
-                        color_discrete_sequence=['#FF7F0E'], title="Common characteristics of hit songs")
+                        color_discrete_sequence=['rgb(195,38,135)'], title="Common characteristics of hit songs")
     fig.update_traces(fill='toself')
     fig.update_layout(width=1000, 
                       height=600, 
