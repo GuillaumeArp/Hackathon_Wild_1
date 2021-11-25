@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
 
-df_music_with_0_pop = pd.read_csv('..\data\music_dumies.csv.zip')
+df = pd.read_csv('..\data\music_ml.csv.zip', index_col=0)
 
 
 def _max_width_():
@@ -158,7 +158,7 @@ def popularity_estimator():
         
     with col2:
         if st.button('add'):
-            result = add(1, 2)
+            result = algo_prediction()
             st.write('result: %s' % result)
         
     ''    
