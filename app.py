@@ -116,7 +116,6 @@ def popularity_estimator():
     'Explanation text'
     
     genre_list = ["Children's Music", 'Comedy', 'Soundtrack', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'Movie', 'A Capella']
-    key_list = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
     
     col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
     
@@ -124,7 +123,7 @@ def popularity_estimator():
         valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         danceability = st.slider(label='Danceability', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=-25.0, step=0.1)
-        temp = st.slider(label='Tempo', min_value=32, max_value=242, value=120, step=1)
+        tempo = st.slider(label='Tempo', min_value=32, max_value=242, value=120, step=1)
         
     with col3:
         energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
