@@ -102,6 +102,16 @@ def music_details():
 def popularity_estimator():
 
     def algo_prediction():
+        dataset_columns = ['track_name', 'acousticness', 'danceability', 'duration_ms', 'energy',
+       'instrumentalness', 'liveness', 'loudness', 'mode',
+       'speechiness', 'tempo', 'valence', 'A Capella',
+       'Alternative', 'Anime', 'Blues', "Children's Music",
+       'Classical', 'Comedy', 'Country', 'Dance', 'Electronic', 'Folk',
+       'Hip-Hop', 'Indie', 'Jazz', 'Movie', 'Opera', 'Pop', 'R&B', 'Rap',
+       'Reggae', 'Reggaeton', 'Rock', 'Ska', 'Soul', 'Soundtrack', 'World', 'popularity_score']
+
+        df_popular = pd.DataFrame(columns=dataset_columns)
+
         cols = ['acousticness', 'danceability', 'duration_ms', 'energy',
        'instrumentalness', 'liveness', 'loudness', 'mode',
        'speechiness', 'tempo', 'valence', 'A Capella',
@@ -159,7 +169,9 @@ def popularity_estimator():
         
     with col2:
         if st.button('add'):
-            df_popular = pd.DataFrame
+            #########
+            df_popular["Valence"] = valence
+            #########
             result = algo_prediction()
             st.write('result: %s' % result)
         
