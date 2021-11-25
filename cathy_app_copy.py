@@ -107,7 +107,7 @@ def scenario():
 
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.image('assets/brainstorming_members.jpg')
+        st.image('assets/brains.png')
 
     'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
     'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
