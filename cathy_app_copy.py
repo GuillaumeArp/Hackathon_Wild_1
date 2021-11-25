@@ -105,14 +105,14 @@ def scenario():
     'We all come from the wild code school with different backgrounds but one point brought us together:'
     st.markdown("<h4 style = 'text-align : center'> 'We miss the boy bands (and the money too)! </h4>", unsafe_allow_html=True)
 
-        col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns(3)
     with col2:
         st.image('assets/brainstorming_members.jpg')
 
     'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
     'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
 
-         col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col2:
         st.image('assets/money_rain.jpg')   
     with col4:
