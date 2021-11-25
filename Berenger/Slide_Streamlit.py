@@ -1,7 +1,13 @@
 import streamlit as st
 import pandas as pd
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
+
+df_music_with_0_pop = pd.read_csv('..\data\music_dumies.csv.zip')
+
 
 def _max_width_():
     max_width_str = "max-width: 1300px;"
@@ -93,7 +99,30 @@ def music_details():
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
 
 def popularity_estimator():
-    
+
+    def algo_prediction():
+        cols = ['acousticness', 'danceability', 'duration_ms', 'energy',
+       'instrumentalness', 'liveness', 'loudness', 'mode',
+       'speechiness', 'tempo', 'valence', 'A Capella',
+       'Alternative', 'Anime', 'Blues', "Children's Music",
+       'Classical', 'Comedy', 'Country', 'Dance', 'Electronic', 'Folk',
+       'Hip-Hop', 'Indie', 'Jazz', 'Movie', 'Opera', 'Pop', 'R&B', 'Rap',
+       'Reggae', 'Reggaeton', 'Rock', 'Ska', 'Soul', 'Soundtrack', 'World']
+
+        X = df_music_with_0_pop[cols]
+        y = df_music_with_0_pop['popularity_score']
+        X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75)
+
+
+        scaler = StandardScaler().fit(X_train)
+
+        # Your scaler model can now transform your data
+        X_train_scaled = scaler.transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+
+        model = LogisticRegression(max_iter=20).fit(X_train_scaled,y_train)
+
+
     st.subheader('Predicting if a track will be popular or not')
     
     'Explanation text'
