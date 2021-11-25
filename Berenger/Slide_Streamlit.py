@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
 
-df = pd.read_csv('..\data\music_ml.csv.zip', index_col=0)
+df = pd.read_csv('..\data\dataset_algo.csv.zip', index_col=0)
 
 
 def _max_width_():
@@ -109,8 +110,8 @@ def popularity_estimator():
        'Hip-Hop', 'Indie', 'Jazz', 'Movie', 'Opera', 'Pop', 'R&B', 'Rap',
        'Reggae', 'Reggaeton', 'Rock', 'Ska', 'Soul', 'Soundtrack', 'World']
 
-        X = df_music_with_0_pop[cols]
-        y = df_music_with_0_pop['popularity_score']
+        X = df[cols]
+        y = df['popularity_score']
         X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75)
 
 
@@ -158,6 +159,7 @@ def popularity_estimator():
         
     with col2:
         if st.button('add'):
+            df_popular = pd.DataFrame
             result = algo_prediction()
             st.write('result: %s' % result)
         
