@@ -27,8 +27,13 @@ def load_data_polar():
 def load_data_ml():
     return pd.read_csv('data/music_ml.csv.zip')
 
+@st.cache
+def load_data_popu_genre():
+    return pd.read_csv('data/pop_genre.csv.zip')
+
 data_polar_top = load_data_polar()
 data_ml = load_data_ml()
+popularity_genre = load_data_popu_genre()
 
 st.title('Music Track Analysis Project')
 
@@ -97,14 +102,30 @@ def music_details():
     st.subheader('What makes a track popular?')
     
     "We wanted to know if hit songs have any characteristics in common."
+    " First of all what are the most popular genres of music? "
     
+    fig = px.scatter_polar(popularity_genre, r="popularity", theta="genre",
+                       color="popularity", size="popularity",
+                       color_continuous_scale=px.colors.diverging.Tealrose, title='Popularity rate for each musical genre',
+                       template="plotly_dark")
+    fig.update_layout(
+                    title= {'x' : 0.5},                    
+                    width=1000,
+                    height=600,                    
+                    template='plotly_dark',
+                    font_size=13
+                    )
+    st.plotly_chart(fig, use_container_width=True)
+    "As we can see, the most popular genre is Pop with a mean popularity rate of 66.59. "
     "Does the hit songs have common features? We sorted the data to keep only songs with popularity over 80 to see that."
       
     carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
     fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
                         color_discrete_sequence=['#FF7F0E'], title="Common characteristics of hit songs")
     fig.update_traces(fill='toself')
-    fig.update_layout(width=800, height=500, title= {'x' : 0.5})
+    fig.update_layout(width=1000, 
+                      height=600, 
+                      title= {'x' : 0.5})
     st.plotly_chart(fig, use_container_width=True)
     "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity "
     
