@@ -93,6 +93,9 @@ def popularity_estimator():
     'Explanation text'
     
     valence = st.slider(label='valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+    danceability = st.slider(label='danceability', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+    
+    ':dollar: :dollar: :dollar: :dollar:'
     
 if __name__ == "__main__":
     main()
