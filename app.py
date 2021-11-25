@@ -108,23 +108,122 @@ def home():
         
 def scenario():
     
-    st.subheader('Scenario')
+    st.subheader('The story')
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/the-osmonds-musical.jpg')
     
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
+    'It all started in the 60s with the arrival of the first boy bands.'
+    'This successful term was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
+    'Others have started to ride the wave, and in particular The Jackson five, which will form the basis of this new musical approach that will be the boys band.'
+
+    'Finally definition is simple : Omnipresence of voices sung in chorus, synchronized attitude and songs that could seduce young girls.'
+    'Yes yes, only young girls ...'
+
+    'Music is like fashion, it\'s cyclical. With the popularity running out of control, the record companies started to get ideas.'
+    '30 years later, the same excitement with the new boys bands, this time with young girls who are part of the game (the spice girls not to mention them).'
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/Past_time.gif')
+
+    'A global success with these groups, such a dazzling disappearance you could say? But what financial success!'
+    'It is then without counting on our 5 super brains able to predict you which best combinations of musical data can bring you to the artistic and financial recognition !'
+
+    " "
+    st.subheader('Who are we?')
+
+    'Alexandra, Catherine, Bérenger, Guillaume and Nizar.'
+    'We all come from the wild code school with different backgrounds but one point brought us together:'
+    st.markdown("<h6 style = 'text-align : center'> We miss the boys bands (and the money too)! </h6>", unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/brain.png', width = 300)
+
+    'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
+    'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col2:
+        st.image('assets/money_rain.gif', width = 280)   
+    with col4:
+        st.image('assets/picsou.gif')   
+
+    'So yes ! It\'s a pure commercial product, but it works!'
+    'For your information, The beatles have also been categorized as a boy band!'
+
+    " "
+    st.subheader('Keep a cool head, Data Yoyo is here')
+
+    'We have understood that if it is in our head, it is achievable, so we did it !'
+
+    'From the spotify database, we asked ourselves with what parameters we could predict the popularity of a title.'
+    'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the popularity_estimator page.'
+    'To present our demo to you, we have selected several titles from our personal preferences.'
+    'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
+
+
+    " "
+    st.subheader('Attention à la chute !')
+
+    'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
+    'But we are working on it for the next datathon :)'
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image('assets/logo_data_yoyo.png')
 
 def music_details():
     
     st.subheader('What makes a track popular?')
     
-    'Polar chart showing top music characteristics.'
+    "We wanted to know if hit songs have any characteristics in common."
+    " First of all what are the most popular genres of music? "
     
-    carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
-    fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
-                        color_discrete_sequence=px.colors.sequential.Plasma_r)
-    fig.update_traces(fill='toself')
-    
-    fig.update_layout(height=900)
+    fig = px.scatter_polar(popularity_genre, r="popularity", theta="genre",
+                       color="popularity", size="popularity",
+                       color_continuous_scale=px.colors.diverging.Tealrose, title='Popularity rate for each musical genre',
+                       template="plotly_dark")
+    fig.update_layout(
+                    title= {'x' : 0.5},                    
+                    width=1000,
+                    height=600,                    
+                    template='plotly_dark',
+                    font_size=13
+                    )
     st.plotly_chart(fig, use_container_width=True)
+    
+    "As we can see, the most popular genre is Pop with a mean popularity rate of 66.59. "
+    
+    "In our exploratory data analysis we've seen that the popularity is highly correlated with the danceability. So, do the most popular genres have the higher danceability?"
+    
+    fig = px.bar_polar(popularity_genre, r=popularity_genre['danceability'],
+    theta = popularity_genre['genre'], template="plotly_dark", color= 'popularity', 
+    color_continuous_scale=px.colors.diverging.Temps,
+    title = "Danceability by genre")
+    fig.update_layout(width=1000, 
+                      height=600, 
+                      title= {'x' : 0.5})
+    st.plotly_chart(fig, use_container_width=True)
+    
+    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit !"
+    
+    "Let's see if the hit songs have common features. We sorted the data to keep only songs with popularity over 80 to see that."
+      
+    carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
+    
+    fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
+                        color_discrete_sequence=['rgb(195,38,135)'], title="Common characteristics of hit songs")
+    fig.update_traces(fill='toself')
+    fig.update_layout(width=1000, 
+                      height=600, 
+                      title= {'x' : 0.5})
+    
+    st.plotly_chart(fig, use_container_width=True)
+    
+    "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity "
 
 def popularity_estimator():
     
