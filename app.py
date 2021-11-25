@@ -4,6 +4,7 @@ import plotly.express as px
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
 
@@ -177,13 +178,12 @@ def popularity_estimator():
         X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.75)
 
 
-        scaler = StandardScaler().fit(X_train)
 
-        # Your scaler model can now transform your data
-        X_train_scaled = scaler.transform(X_train)
-        X_test_scaled = scaler.transform(X_test)
+        
 
-        model = LogisticRegression(max_iter=20).fit(X_train_scaled,y_train)
+        # Random Forest
+        rfc = RandomForestClassifier(n_estimators=8)
+        rfc.fit(X_train, y_train)
 
         dataset_columns = ['track_name']
 
@@ -217,7 +217,7 @@ def popularity_estimator():
         df_popular.insert(1, "danceability", [danceability])
         df_popular.insert(1, "acousticness", [acousticness])
 
-        df_popular["popularity_score"] = model.predict(df_popular[cols])
+        df_popular["popularity_score"] = rfc.predict(df_popular[cols])
 
         resultat = df_popular["popularity_score"].iloc[0]
 
