@@ -99,9 +99,9 @@ def popularity_estimator():
     'Explanation text'
     
     genre_list = ["Children's Music", 'Comedy', 'Soundtrack', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'Movie', 'A Capella']
-    key_list = ['C', 'G', 'D', 'C#', 'A', 'F', 'B', 'E', 'A#', 'F#', 'G#', 'D#']
+    key_list = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
     
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
     
     with col1:
         valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
@@ -109,18 +109,19 @@ def popularity_estimator():
         loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=-25.0, step=0.1)
         duration_ms = st.slider(label='Duration in seconds', min_value=90, max_value=900, value=210, step=1)
         
-    with col2:
+    with col3:
         energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         key = st.select_slider(label='Key', options=key_list)
         
-    ''    
-    with col3:
+    with col5:
         liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         acousticness = st.slider(label='Acousticness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        genre = st.select_slider(label='Genre', options=genre_list)
+        genre = st.select_slider(label='Genre', options=genre_list, value='Pop')
         mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
+        
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.'
     
 if __name__ == "__main__":
     main()
