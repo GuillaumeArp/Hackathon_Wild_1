@@ -57,7 +57,7 @@ def main():
 
 def home():
 
-    st.image('assets/logo_data_yoyo.png', width=400)
+    
     st.subheader('About this project')
 
     'This project was completed during a 33 hours hackathon, and the subject is music.'
@@ -72,11 +72,11 @@ def home():
         
     with col2:
         st.markdown('[Nizar Ben Slama](https://github.com/bennizar87)')
-        #st.image('')
+        st.image('assets/nizar.png')
         
     with col3:
         st.markdown('[Alexandra Houssin](hhttps://github.com/alexandrahoussin)')
-        #st.image('')    
+        st.image('assets/alex.png')    
     
     ''    
     col4, col5, col6 = st.columns(3)
@@ -85,9 +85,22 @@ def home():
         st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
         st.image('assets/cath.png')
         
+    with col5:
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.write('\n')
+        st.image('assets/logo_data_yoyo.png', width=400)
+        
     with col6:
         st.markdown('[Bérenger Queune](https://github.com/BerengerQueune)')
-        #st.image('')
+        st.image('assets/berenger.png')
         
 def scenario():
     
