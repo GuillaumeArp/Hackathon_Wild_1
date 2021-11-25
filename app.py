@@ -93,6 +93,7 @@ def popularity_estimator():
     'Explanation text'
     
     genre_list = ["Children's Music", 'Comedy', 'Soundtrack', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'Movie', 'A Capella']
+    key_list = ['C', 'G', 'D', 'C#', 'A', 'F', 'B', 'E', 'A#', 'F#', 'G#', 'D#']
     
     col1, col2, col3 = st.columns(3)
     
@@ -100,17 +101,20 @@ def popularity_estimator():
         valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         danceability = st.slider(label='Danceability', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=-25.0, step=0.1)
+        duration_ms = st.slider(label='Duration in seconds', min_value=90, max_value=900, value=210, step=1)
         
     with col2:
         energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+        key = st.select_slider(label='Key', options=key_list)
         
+    ''    
     with col3:
         liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         acousticness = st.slider(label='Acousticness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
         genre = st.select_slider(label='Genre', options=genre_list)
-    
+        mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
     
 if __name__ == "__main__":
     main()
