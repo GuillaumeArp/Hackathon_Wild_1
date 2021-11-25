@@ -18,7 +18,7 @@ def _max_width_():
 
 _max_width_()
 
-st.title('Music Analysis Project')
+st.title('Music Track Analysis Project')
 
 def main():
 
@@ -45,10 +45,10 @@ def home():
 
     st.subheader('About this project')
 
-    'The purpose of this project is to help a new movie theatre owner to get a better idea what the film industry looks like at the moment, and how it has evolved over the years.'
-    'Then, we will provide a recommendation algorithm to help him select the best movies to play at the theatre, based on the tastes of his audience.'
-    ''
+    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
+    ''
     col1, col2, col3 = st.columns(3)
     
     with col1:
@@ -75,7 +75,8 @@ def home():
         #st.image('')
         
 def scenario():
-    pass
+    
+    st.subheader('Scenario')
 
 def music_details():
     pass
