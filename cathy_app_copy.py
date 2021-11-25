@@ -80,7 +80,7 @@ def scenario():
 
     col1, col2, col3 = st.columns(3)
     with col2:
-    st.image('assets/the-osmonds-musical.jpg')
+        st.image('assets/the-osmonds-musical.jpg')
     
     'It all started in the 60s with the arrival of the first boy bands.'
     'This successful term was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
