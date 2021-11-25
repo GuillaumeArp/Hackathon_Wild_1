@@ -26,11 +26,11 @@ _max_width_()
 
 @st.cache
 def load_data_polar():
-    return pd.read_csv('..data/top_polar.csv.zip')
+    return pd.read_csv('../data/top_polar.csv.zip')
 
 @st.cache
 def load_data_ml():
-    return pd.read_csv('..data/music_ml.csv.zip')
+    return pd.read_csv('../data/music_ml.csv.zip')
 
 data_polar_top = load_data_polar()
 data_ml = load_data_ml()
@@ -119,7 +119,7 @@ def popularity_estimator():
                 df_popular.insert(1, i, [0])
                 
         df_popular.insert(1, "valence", [valence])
-        df_popular.insert(1, "tempo", [temp])
+        df_popular.insert(1, "tempo", [tempo])
         df_popular.insert(1, "speechiness", [speechiness])
         df_popular.insert(1, "mode", [mode])
         df_popular.insert(1, "loudness", [loudness])
