@@ -400,7 +400,9 @@ def popularity_estimator():
     elif resultat == 5:
         col1, col3, col5= st.columns([3,6,3])
         with col3:
-            st.image('assets/5dollars.png', caption= "Money! Money! Money! It's a rich man's world!")
+            st.image('assets/5dollars.png')
+            st.markdown("<h5 style='text-align: center;'>5 bank notes!</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>Money! Money! Money! It's a rich man's world!</h5>", unsafe_allow_html=True)
 
     st.write(" ")
         
