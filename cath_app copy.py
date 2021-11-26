@@ -42,7 +42,7 @@ data_ml = load_data_ml()
 popularity_genre = load_data_pop_genre()
 
 
-st.title(' ')
+st.title('Music Track Analysis Project')
 
 def main():
 
@@ -71,7 +71,7 @@ def home():
     
     st.subheader('About this project')
 
-    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'This project was completed during a 29 hours hackathon, and the subject is music.'
     'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
     ''
@@ -94,7 +94,7 @@ def home():
     
     with col4:
         st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
-        st.image('assets/cath.png')
+        st.image('assets/cath.jpg')
         
     with col5:
         st.write('\n')
@@ -238,16 +238,7 @@ def popularity_estimator():
     
     'Explanation text'
     
-    col1, col2, col3 = st.columns([3, 1, 3])
-    
-    with col1:
-        artist_name = st.selectbox('Select an artist or band', data_ml['artist_name'].unique())
-    
-    with col3:
-        df_temp = data_ml[data_ml['artist_name'] == artist_name]
-        track_name = st.selectbox('Select a track name', df_temp['track_name'])
-    
-    
+    track_name = st.selectbox('Select a track', data_ml.track_name)
     
     genre_list = ["Children's Music", 'Comedy', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'A Capella']
     
