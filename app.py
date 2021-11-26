@@ -6,7 +6,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
-st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
+st.set_page_config(page_icon=':musical_note:')
+
+st.markdown("<h1 style='text-align: center;'>Music Popularity Analysis</h1>", unsafe_allow_html=True)
 
 def _max_width_():
     max_width_str = "max-width: 1300px;"
@@ -236,7 +238,7 @@ def popularity_estimator():
     
     'Explanation text'
     
-    
+    track_name = st.selectbox('Select a track', data_ml.track_name)
     
     genre_list = ["Children's Music", 'Comedy', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'A Capella']
     
@@ -286,7 +288,7 @@ def popularity_estimator():
         rfc = RandomForestClassifier(n_estimators=8)
         rfc.fit(X_train, y_train)
 
-        dataset_columns = ['track_name']
+        dataset_columns = ['artist_name', 'track_name', 'track_id']
 
         df_popular = pd.DataFrame(columns=dataset_columns)
 
