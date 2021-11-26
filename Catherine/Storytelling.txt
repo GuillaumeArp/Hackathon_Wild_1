@@ -54,7 +54,7 @@ Pour info, les beatles ont aussi été catégorisés comme un boys band !
 Tu-Duy,, on a bien compris ce que tu nous a dit, si c'est dans notre tête c'est réalisable.
 A partir de la base de données spotify, nous nous sommes demandés avec quels paramètres nous pourrions prédire la popularité d'un titre.
 Ces paramètres, nous voudrions les modifier en temps réels et c'est ce que nous avons réussis à faire avec les sliders que vous pouvez voir ici.
-Pour vous présenter notre démo, nous avons sélectionnés plusieurs titres dans nos préférences personnelles.
+Pour vous présenter notre démo, vous pouvez sélectionner n'importe quel titre et nous pourrons vous montrer de quoi notr app est capable !
 Celle_ci sont automatiquement assorties des sliders correspondantes et vous pouvez ainsi voir que si l'on modifie un paramètre, nous pouvons influer sur sa popularité.
 
 
