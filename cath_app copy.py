@@ -42,7 +42,7 @@ data_ml = load_data_ml()
 popularity_genre = load_data_pop_genre()
 
 
-st.title(' ')
+st.title('Music Track Analysis Project')
 
 def main():
 
@@ -71,7 +71,7 @@ def home():
     
     st.subheader('About this project')
 
-    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'This project was completed during a 29 hours hackathon, and the subject is music.'
     'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
     ''
@@ -94,7 +94,7 @@ def home():
     
     with col4:
         st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
-        st.image('assets/cath.png')
+        st.image('assets/cath.jpg')
         
     with col5:
         st.write('\n')
@@ -335,34 +335,22 @@ def popularity_estimator():
         if st.button('Click Here'):
             #########
             resultat = algo_popularity()
-
-                # st.image('assets/dollar.png', 'assets/dollar.png', 'assets/dollar.png', 'assets/dollar.png', 'assets/dollar.png')
             if resultat == 1:
                 st.write("bravo c'est 1 lol")
-                # st.image('assets/dollar.png')
             elif resultat == 2:
                 st.write("bravo c'est 2 lol")
-                # st.image('assets/dollar.png', 'assets/dollar.png')
             elif resultat == 3:
                 st.write("bravo c'est 3 lol")
-                st.image('assets/dollar.png')
-
             elif resultat == 4:
-                col1, col2, col3, col4, col5= st.columns([3,5,1,5,3])
                 st.write("bravo c'est 4 lol")
-                st.image('assets/dollar.png')
-                
-                st.image('assets/dollar.png', 'assets/dollar.png')
             elif resultat == 5:
                 st.write("bravo c'est 5 lol")
             #########
-    
+
         
     ''    
     with col3:
         st.write(" ")
     
-
-
 if __name__ == "__main__":
     main()
