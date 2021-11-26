@@ -286,7 +286,7 @@ def popularity_estimator():
         rfc = RandomForestClassifier(n_estimators=8)
         rfc.fit(X_train, y_train)
 
-        dataset_columns = ['track_name']
+        dataset_columns = ['artist_name', 'track_name', 'track_id']
 
         df_popular = pd.DataFrame(columns=dataset_columns)
 
