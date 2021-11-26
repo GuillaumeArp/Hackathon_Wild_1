@@ -41,9 +41,6 @@ data_polar_top = load_data_polar()
 data_ml = load_data_ml()
 popularity_genre = load_data_pop_genre()
 
-
-st.title('Music Track Analysis Project')
-
 def main():
 
     pages = {
