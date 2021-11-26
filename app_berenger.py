@@ -337,16 +337,29 @@ def popularity_estimator():
             resultat = algo_popularity()
             if resultat == 1:
                 st.write("bravo c'est 1 lol")
-                st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYEBKhlYYZa4Saksn04meXChE44J1PU9BCZA&usqp=CAU", 
-                        use_column_width="always", caption="Seulement 1 dollar")
+                st.image('assets/dollar.png', caption="LOL")
             elif resultat == 2:
                 st.write("bravo c'est 2 lol")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
             elif resultat == 3:
                 st.write("bravo c'est 3 lol")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
             elif resultat == 4:
                 st.write("bravo c'est 4 lol")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
             elif resultat == 5:
                 st.write("bravo c'est 5 lol")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
+                st.image('assets/dollar.png', caption="LOL")
             #########
     
         
