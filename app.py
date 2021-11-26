@@ -324,12 +324,12 @@ def popularity_estimator():
 
         return resultat
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
 
     with col1:
         st.write(" ")
         
-    with col2:
+    with col3:
         if st.button('add'):
             #########
             resultat = algo_popularity()
