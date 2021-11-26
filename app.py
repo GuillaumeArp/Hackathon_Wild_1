@@ -245,7 +245,7 @@ def popularity_estimator():
     col1, col2, col3 = st.columns([3, 1, 3])
     
     with col1:
-        artist_name = st.selectbox('Select an artist or band', data_ml['artist_name'].unique())
+        artist_name = st.selectbox('Select an artist or band name first', data_ml['artist_name'].unique())
     
     with col3:
         df_temp = data_ml[data_ml['artist_name'] == artist_name]
