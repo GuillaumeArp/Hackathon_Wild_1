@@ -330,7 +330,7 @@ def popularity_estimator():
         st.write(" ")
         
     with col3:
-        if st.button('Click Here to run the algorithm'):
+        if st.button('Click Here'):
             #########
             resultat = algo_popularity()
             if resultat == 1:
