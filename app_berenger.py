@@ -42,7 +42,7 @@ data_ml = load_data_ml()
 popularity_genre = load_data_pop_genre()
 
 
-st.title('Music Track Analysis Project')
+st.title(' ')
 
 def main():
 
