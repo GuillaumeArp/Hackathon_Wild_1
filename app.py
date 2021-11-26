@@ -213,7 +213,7 @@ def music_details():
                       title= {'x' : 0.5})
     st.plotly_chart(fig, use_container_width=True)
     
-    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit !"
+    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit!"
     
     "Let's see if the hit songs have common features. We sorted the data to keep only songs with popularity over 80 to see that."
       
@@ -228,7 +228,7 @@ def music_details():
     
     st.plotly_chart(fig, use_container_width=True)
     
-    "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity "
+    "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity."
 
 def popularity_estimator():
     
