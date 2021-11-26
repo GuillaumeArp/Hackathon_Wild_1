@@ -354,31 +354,57 @@ def popularity_estimator():
 
         return resultat
 
-    col1, col2, col3, col4, col5= st.columns([3,5,1,5,3])
-
+    st.write(" ")
+    col1, col2, col3, col4, col5= st.columns([3,9,2,9,3])
+    resultat = 0
     with col1:
         st.write(" ")
         
     with col3:
-        if st.button('Click Here'):
+        if st.button("Let's go"):
             #########
-            resultat = algo_popularity()
-            if resultat == 1:
-                st.write("bravo c'est 1 lol")
-            elif resultat == 2:
-                st.write("bravo c'est 2 lol")
-            elif resultat == 3:
-                st.write("bravo c'est 3 lol")
-            elif resultat == 4:
-                st.write("bravo c'est 4 lol")
-            elif resultat == 5:
-                st.write("bravo c'est 5 lol")
-            #########
-
-        
+            resultat = algo_popularity()   
     ''    
-    with col3:
+    with col5:
         st.write(" ")
+
+    st.write (" ")
+    if resultat == 1:
+        col1, col3, col5= st.columns([8,2,8])
+        with col3:
+            st.image('assets/1dollar.png')
+            st.markdown("<h5 style='text-align: center;'>Only 1...</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>Try again.</h5>", unsafe_allow_html=True)
+
+    elif resultat == 2:
+        col1, col3, col5= st.columns([5,3,5])
+        with col3:
+            st.image('assets/2dollars.png')
+            st.markdown("<h5 style='text-align: center;'>Only 2?</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>Mifmouf!</h5>", unsafe_allow_html=True)
+
+    elif resultat == 3:
+        col1, col3, col5= st.columns([5,3,5])
+        with col3:
+            st.image('assets/3dollars.png')
+            st.markdown("<h5 style='text-align: center;'>3 bank notes</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>We can make more money than this!</h5>", unsafe_allow_html=True)
+        
+    elif resultat == 4:
+        col1, col3, col5= st.columns([3,4,3])
+        with col3:
+            st.image('assets/4dollars.png')
+            st.markdown("<h5 style='text-align: center;'>4 bank notes</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>Money! Money! Money! We want more money!</h5>", unsafe_allow_html=True)
+        
+    elif resultat == 5:
+        col1, col3, col5= st.columns([3,6,3])
+        with col3:
+            st.image('assets/5dollars.png')
+            st.markdown("<h5 style='text-align: center;'>5 bank notes!</h5>", unsafe_allow_html=True)
+            st.markdown("<h5 style='text-align: center;'>Money! Money! Money! It's a rich man's world!</h5>", unsafe_allow_html=True)
+
+    st.write(" ")
         
     " "
     col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
