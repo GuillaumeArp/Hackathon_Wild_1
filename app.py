@@ -121,36 +121,36 @@ def scenario():
     with col2:
         st.image('assets/the-osmonds-musical.jpg')
     
-    'It all started in the 60s with the arrival of the first boy bands.'
-    'This successful term was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
-    'Others have started to ride the wave, and in particular The Jackson five, which will form the basis of this new musical approach that will be the boys band.'
+    'It all started in the 60s with the arrival of the first boys bands.'
+    'This successful concept was originally family-run with The Osmonds, made up of 5 brothers, who produced cheerful and romantic songs.'
+    'Others have started to ride the wave, and in particular The Jackson Five, which will form the basis of this new musical approach that will be the boys band.'
 
-    'Finally definition is simple : Omnipresence of voices sung in chorus, synchronized attitude and songs that could seduce young girls.'
-    'Yes yes, only young girls ...'
+    'Finally definition is simple: omnipresence of voices sung in chorus, synchronized attitude and songs that could seduce young girls.'
+    'Yes yes, only young girls...'
 
     'Music is like fashion, it\'s cyclical. With the popularity running out of control, the record companies started to get ideas.'
-    '30 years later, the same excitement with the new boys bands, this time with young girls who are part of the game (the spice girls not to mention them).'
+    '30 years later, the same excitement happens with the new boys bands, this time with young girls who are part of the game (the Spice Girls not to mention them).'
 
     col1, col2, col3 = st.columns(3)
     with col2:
         st.image('assets/Past_time.gif')
 
-    'A global success with these groups, such a dazzling disappearance you could say? But what financial success!'
-    'It is then without counting on our 5 super brains able to predict you which best combinations of musical data can bring you to the artistic and financial recognition !'
+    'A global success with these groups, and then such a dazzling disappearance you could say? But what a financial success!'
+    'But our 5 super brains able to help you predict which best combination of musical characteristics can bring you the artistic and, more importantly, financial recognition!'
 
     " "
     st.subheader('Who are we?')
 
     'Alexandra, Catherine, Bérenger, Guillaume and Nizar.'
-    'We all come from the wild code school with different backgrounds but one point brought us together:'
+    'We all come from the Wild Code School with different backgrounds but one point brought us together:'
     st.markdown("<h6 style = 'text-align : center'> We miss the boys bands (and the money too)! </h6>", unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
     with col2:
         st.image('assets/brain.png', width = 300)
 
-    'After a big brainstorming session, our ideas rocketed faster than the latest one from space X (and we didn\'t explode!)'
-    'We defined together that the death of the boy bands were unfair and that thanks to the compilation of our ideas, we could dust them off to make the tickets trickle.'
+    'After a big brainstorming session, our ideas rocketed faster than the latest one from SpaceX (and we didn\'t explode!)'
+    'We defined together that the end of the boys bands era was unfair and that thanks to the mixing of our ideas, we could dust them off to make the cash trickle down.'
 
     col1, col2, col3, col4, col5 = st.columns(5)
     with col2:
@@ -158,25 +158,25 @@ def scenario():
     with col4:
         st.image('assets/picsou.gif')   
 
-    'So yes ! It\'s a pure commercial product, but it works!'
-    'For your information, The beatles have also been categorized as a boy band!'
+    'So yes! It\'s a pure commercial product, but it works!'
+    'For your information, The Beatles have also been categorized as a boys band!'
 
     " "
-    st.subheader('Keep a cool head, Data Yoyo is here')
+    st.subheader('Keep calm, Data Yoyo is here!')
 
-    'We have understood that if it is in our head, it is achievable, so we did it !'
+    'We have understood that if it is in our head, it is achievable, so we did it!'
 
-    'From the spotify database, we asked ourselves with what parameters we could predict the popularity of a title.'
-    'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the popularity_estimator page.'
-    'To show you our demo, you can select any title and we can show you what our app is capable of!'
+    'From a Spotify dataset, we asked ourselves what parameters could be used to predict the popularity of a title.'
+    'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the Popularity Predictor page.'
+    'To try out our app, you can select any title and we can show you what our it is capable of!'
     'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
 
 
     " "
-    st.subheader('Beware of the fall !')
+    st.subheader('Beware of the fall!')
 
-    'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
-    'But we are working on it for the next datathon'
+    'Obviously what we do not yet know how to do is how to influence the human factor to ensure our commercial success for sure!'
+    'But we are working on it for the next hackathon :thinking_face:'
 
     col1, col2, col3 = st.columns(3)
     with col2:
