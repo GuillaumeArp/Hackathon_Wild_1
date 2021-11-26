@@ -173,7 +173,7 @@ def scenario():
 
 
     " "
-    st.subheader('Attention à la chute !')
+    st.subheader('Beware the fall !')
 
     'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
     'But we are working on it for the next datathon :)'
