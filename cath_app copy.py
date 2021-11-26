@@ -168,7 +168,7 @@ def scenario():
 
     'From the spotify database, we asked ourselves with what parameters we could predict the popularity of a title.'
     'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the popularity_estimator page.'
-    'To present our demo to you, we have selected several titles from our personal preferences.'
+    'To show you our demo, you can select any title and we can show you what our app is capable of!'
     'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
 
 
@@ -176,7 +176,7 @@ def scenario():
     st.subheader('Attention à la chute !')
 
     'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
-    'But we are working on it for the next datathon :)'
+    'But we are working on it for the next datathon'
 
     col1, col2, col3 = st.columns(3)
     with col2:
