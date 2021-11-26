@@ -384,21 +384,21 @@ def popularity_estimator():
     col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
     with col1: 
         st.markdown("<p><u> Valence </u>: The positiveness of the track. A positive sound have high valence. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Danceability </u>: Describe if we can dance on the song. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Loudness </u>: Like the energy in decibel, averaged on the track. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Tempo </u>: The speed, the rythm of the song. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Danceability </u>: Describes if we can dance on the song. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Loudness </u>: Loudness in decibel, averaged on the entire track. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Tempo </u>: The speed, the rythm of the song, in BPM. </p>", unsafe_allow_html=True )
         
     with col3:
-        st.markdown("<p><u> Energy </u>: A measure of intensity. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Speechiness </u>: A value near to 1 indicate the level of spoken words in a song. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Energy </u>: A measure of percieved intensity and activity. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Speechiness </u>: Indicates the amount of spoken words, instead of sung, in a track. </p>", unsafe_allow_html=True )
         st.markdown("<p><u> Instrumentalness </u>: An instrumental song doesn't contains vocals. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Duration </u>: The durations, in seconds. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Duration </u>: The track duration in seconds. </p>", unsafe_allow_html=True )
     
     with col5:
-        st.markdown("<p><u> Liveness </u>: Indicate if the track has been recorded in live. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Acousticness </u>: Measure the level of acoustic. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Liveness </u>: Detects the presence of an audience in the recording. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Acousticness </u>: Measures the level of acoustic. </p>", unsafe_allow_html=True )
         st.markdown("<p><u> Genre </u>: The principal genre. </p>", unsafe_allow_html=True )
-        st.markdown("<p><u> Acousticness </u>: Major or Minor. The type of scale. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Acousticness </u>: Major or Minor. The type of musical scale. </p>", unsafe_allow_html=True )
            
     " "
     
