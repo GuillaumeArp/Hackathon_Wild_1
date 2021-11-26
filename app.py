@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
-st.set_page_config(page_title='Music Popularity Analysis', page_icon=':musical_note:')
+st.set_page_config(page_icon=':musical_note:')
 
 st.markdown("<h1 style='text-align: center;'>Music Popularity Analysis</h1>", unsafe_allow_html=True)
 
