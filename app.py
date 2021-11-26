@@ -94,7 +94,7 @@ def home():
     
     with col4:
         st.markdown('[Catherine Le Calve](https://github.com/CathieLC)')
-        st.image('assets/cath.jpg')
+        st.image('assets/cath.png')
         
     with col5:
         st.write('\n')
