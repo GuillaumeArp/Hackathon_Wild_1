@@ -50,7 +50,7 @@ def main():
         'Home': home,
         'Scenario': scenario,
         'Best Parameters': music_details,
-        'Popularity Estimator': popularity_estimator
+        'Popularity Predictor': popularity_estimator
         }
 
     if "page" not in st.session_state:
