@@ -236,7 +236,7 @@ def popularity_estimator():
     
     'Explanation text'
     
-    
+    track_name = st.selectbox('Select a track', data_ml.track_name)
     
     genre_list = ["Children's Music", 'Comedy', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'A Capella']
     
