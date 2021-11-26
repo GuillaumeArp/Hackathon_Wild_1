@@ -337,6 +337,8 @@ def popularity_estimator():
             resultat = algo_popularity()
             if resultat == 1:
                 st.write("bravo c'est 1 lol")
+                st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYEBKhlYYZa4Saksn04meXChE44J1PU9BCZA&usqp=CAU", 
+                        use_column_width="always", caption="Seulement 1 dollar")
             elif resultat == 2:
                 st.write("bravo c'est 2 lol")
             elif resultat == 3:
@@ -346,11 +348,13 @@ def popularity_estimator():
             elif resultat == 5:
                 st.write("bravo c'est 5 lol")
             #########
-
+    
         
     ''    
     with col3:
         st.write(" ")
     
+
+
 if __name__ == "__main__":
     main()
