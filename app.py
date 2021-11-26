@@ -168,7 +168,7 @@ def scenario():
 
     'From the spotify database, we asked ourselves with what parameters we could predict the popularity of a title.'
     'These parameters, we would like to modify them in real time and this is what we managed to do with the sliders that you can see on the popularity_estimator page.'
-    'To present our demo to you, we have selected several titles from our personal preferences.'
+    'To show you our demo, you can select any title and we can show you what our app is capable of!'
     'These are automatically matched with the corresponding sliders and you can see that if we change a parameter, we can influence its popularity.'
 
 
@@ -176,7 +176,7 @@ def scenario():
     st.subheader('Beware the fall !')
 
     'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
-    'But we are working on it for the next datathon :)'
+    'But we are working on it for the next datathon'
 
     col1, col2, col3 = st.columns(3)
     with col2:
@@ -236,8 +236,6 @@ def popularity_estimator():
     
     st.subheader('Predicting if a track will be popular or not')
     
-    'Explanation text'
-    
     col1, col2, col3 = st.columns([3, 1, 3])
     
     with col1:
@@ -247,29 +245,44 @@ def popularity_estimator():
         df_temp = data_ml[data_ml['artist_name'] == artist_name]
         track_name = st.selectbox('Select a track name', df_temp['track_name'])
     
+    track_id = df_temp[df_temp['track_name'] == track_name]['track_id'].values[0]
     
-    
+    selected_track_df = data_ml[data_ml['track_id'] == track_id]
+
     genre_list = ["Children's Music", 'Comedy', 'Indie', 'Jazz', 'Pop', 'Electronic', 'Folk', 'Hip-Hop', 'Rock', 'Alternative', 'Classical', 'Rap', 'World', 'Soul', 'Blues', 'R&B', 'Anime', 'Reggaeton', 'Ska', 'Reggae', 'Dance', 'Country', 'Opera', 'A Capella']
+    
+    selected_genre = ''
+    for i in genre_list:
+        if selected_track_df[i].values[0] == 1:
+            selected_genre = i
+  
+    selected_mode = ''
+    if selected_track_df['mode'].values[0] == 1:
+        selected_mode = 'Major'
+    else:
+        selected_mode = 'Minor'
+        
+        
     
     col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
     
     with col1:
-        valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        danceability = st.slider(label='Danceability', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=-25.0, step=0.1)
-        tempo = st.slider(label='Tempo', min_value=32, max_value=242, value=120, step=1)
+        valence = st.slider(label='Valence', min_value=0.0, max_value=1.0, value=float(selected_track_df['valence'].iloc[0]), step=0.01)
+        danceability = st.slider(label='Danceability', min_value=0.0, max_value=1.0, value=float(selected_track_df['danceability'].iloc[0]), step=0.01)
+        loudness = st.slider(label='Loudness', min_value=-50.0, max_value=0.0, value=float(selected_track_df['loudness'].iloc[0]), step=0.1)
+        tempo = st.slider(label='Tempo', min_value=32, max_value=242, value=int(selected_track_df['tempo'].iloc[0]), step=1)
         
     with col3:
-        energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        duration_ms = st.slider(label='Duration', min_value=90, max_value=900, value=210, step=1)
+        energy = st.slider(label='Energy', min_value=0.0, max_value=1.0, value=float(selected_track_df['energy'].iloc[0]), step=0.01)
+        speechiness = st.slider(label='Speechiness', min_value=0.0, max_value=1.0, value=float(selected_track_df['speechiness'].iloc[0]), step=0.01)
+        instrumentalness = st.slider(label='Instrumentalness', min_value=0.0, max_value=1.0, value=float(selected_track_df['instrumentalness'].iloc[0]), step=0.01)
+        duration_ms = st.slider(label='Duration', min_value=90, max_value=900, value=int(selected_track_df['duration_ms'].iloc[0]), step=1)
         
     with col5:
-        liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        acousticness = st.slider(label='Acousticness', min_value=0.0, max_value=1.0, value=0.5, step=0.01)
-        genre = st.select_slider(label='Genre', options=genre_list, value='Pop')
-        mode = st.select_slider(label='Mode', options=['Major', 'Minor'])
+        liveness = st.slider(label='Liveness', min_value=0.0, max_value=1.0, value=float(selected_track_df['liveness'].iloc[0]), step=0.01)
+        acousticness = st.slider(label='Acousticness', min_value=0.0, max_value=1.0, value=float(selected_track_df['acousticness'].iloc[0]), step=0.01)
+        genre = st.select_slider(label='Genre', options=genre_list, value=selected_genre)
+        mode = st.select_slider(label='Mode', options=['Major', 'Minor'], value=selected_mode)
         
         if mode == 'Minor':
             mode = 0
