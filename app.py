@@ -69,7 +69,7 @@ def main():
 def home():
 
     
-    st.subheader('About this project')
+    st.markdown("<h2 style = 'text-align : center'> About this project </h2>", unsafe_allow_html=True)
 
     'This project was completed during a 33 hours hackathon, and the subject is music.'
     'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
@@ -115,7 +115,7 @@ def home():
         
 def scenario():
     
-    st.subheader('The story')
+    st.markdown("<h2 style = 'text-align : center'> The Story </h2>", unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
     with col2:
@@ -173,7 +173,7 @@ def scenario():
 
 
     " "
-    st.subheader('Beware the fall !')
+    st.subheader('Beware of the fall !')
 
     'Obviously what we do not yet know how to do is influence the human parameter to ensure our commercial success for sure!'
     'But we are working on it for the next datathon'
@@ -184,21 +184,24 @@ def scenario():
 
 def music_details():
     
-    st.subheader('What makes a track popular?')
+    ""
+    st.markdown("<h2 style = 'text-align : center'> What makes a track popular? </h2>", unsafe_allow_html=True)
+    
     
     "We wanted to know if hit songs have any characteristics in common."
     " First of all what are the most popular genres of music? "
     
     fig = px.scatter_polar(popularity_genre, r="popularity", theta="genre",
                        color="popularity", size="popularity",
-                       color_continuous_scale=px.colors.diverging.Tealrose, title='Popularity rate for each musical genre',
-                       template="plotly_dark")
+                       color_continuous_scale=px.colors.diverging.Tealrose, title='Popularity Rate for Each Musical Genre',
+                       template="plotly_dark", labels = {'popularity' : "Mean Popularity"})
     fig.update_layout(
                     title= {'x' : 0.5},                    
                     width=1000,
                     height=600,                    
                     template='plotly_dark',
-                    font_size=13
+                    font_size=13,
+                    
                     )
     st.plotly_chart(fig, use_container_width=True)
     
@@ -209,20 +212,22 @@ def music_details():
     fig = px.bar_polar(popularity_genre, r=popularity_genre['danceability'],
     theta = popularity_genre['genre'], template="plotly_dark", color= 'popularity', 
     color_continuous_scale=px.colors.diverging.Temps,
-    title = "Danceability by genre")
+    title = "Danceability by Genre", labels = {'popularity' : "Mean Popularity"})
     fig.update_layout(width=1000, 
                       height=600, 
                       title= {'x' : 0.5})
     st.plotly_chart(fig, use_container_width=True)
     
-    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit!"
+    "The most popular genres have high danceability. But we can see that it's not the only characteristic to do a hit song. Let's go further and and study all the features that make a hit !"
     
     "Let's see if the hit songs have common features. We sorted the data to keep only songs with popularity over 80 to see that."
-      
+    
+    
     carac = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'liveness', 'speechiness',  'valence', 'loudness_scaled']
     
     fig = px.line_polar(data_polar_top, theta=carac, r= data_polar_top[carac].mean(), line_close=True, template="plotly_dark", 
-                        color_discrete_sequence=['rgb(195,38,135)'], title="Common characteristics of hit songs")
+                        color_discrete_sequence=['rgb(195,38,135)'], title="Common Characteristics of Hit Songs"
+                        )
     fig.update_traces(fill='toself')
     fig.update_layout(width=1000, 
                       height=600, 
@@ -230,11 +235,12 @@ def music_details():
     
     st.plotly_chart(fig, use_container_width=True)
     
+
     "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity."
 
 def popularity_estimator():
     
-    st.subheader('Predicting if a track will be popular or not')
+    st.markdown("<h2 style = 'text-align : center'> Predicting if a track will be popular or not </h2>", unsafe_allow_html=True)
     
     col1, col2, col3 = st.columns([3, 1, 3])
     
@@ -373,6 +379,28 @@ def popularity_estimator():
     ''    
     with col3:
         st.write(" ")
+        
+    " "
+    col1, col2, col3, col4, col5= st.columns([3,1,3,1,3])
+    with col1: 
+        st.markdown("<p><u> Valence </u>: The positiveness of the track. A positive sound have high valence. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Danceability </u>: Describe if we can dance on the song. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Loudness </u>: Like the energy in decibel, averaged on the track. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Tempo </u>: The speed, the rythm of the song. </p>", unsafe_allow_html=True )
+        
+    with col3:
+        st.markdown("<p><u> Energy </u>: A measure of intensity. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Speechiness </u>: A value near to 1 indicate the level of spoken words in a song. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Instrumentalness </u>: An instrumental song doesn't contains vocals. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Duration </u>: The durations, in seconds. </p>", unsafe_allow_html=True )
+    
+    with col5:
+        st.markdown("<p><u> Liveness </u>: Indicate if the track has been recorded in live. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Acousticness </u>: Measure the level of acoustic. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Genre </u>: The principal genre. </p>", unsafe_allow_html=True )
+        st.markdown("<p><u> Acousticness </u>: Major or Minor. The type of scale. </p>", unsafe_allow_html=True )
+           
+    " "
     
 if __name__ == "__main__":
     main()

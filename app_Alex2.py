@@ -235,7 +235,7 @@ def music_details():
     st.plotly_chart(fig, use_container_width=True)
     
 
-    "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity "
+    "This polar chart shows us that a popular song is a song on which we can easily dance and with high energy. The valence is one of hit songs characteristics too, listeners prefer positive songs. We've scaled the loudness and show the absolute value. Here we can see that Hit songs have a high intensity."
 
 def popularity_estimator():
     st.markdown("<h2 style = 'text-align : center'> Predicting if a track will be popular or not </h2>", unsafe_allow_html=True)
