@@ -4,7 +4,7 @@ This is a project done during a 29 hours hackathon, which subject was music.
 
 Our team Data Yoyo decided to create a project to predict the popularity of a song based on its characteristics. To do that, we used a dataset from Spotify containing about 250k songs, and the calculated characteristics of those tracks, as well as the genre, the key, the mode, and the actual popularity of the track on Spotify.
 
-The app can be found at https://share.streamlit.io/guillaumearp/hackathon_wild_1/main/app.py
+The app can be found on [this page](https://share.streamlit.io/guillaumearp/hackathon_wild_1/main/app.py)
 
 To summarize the scenario in few words, we wanted to create a tool that a music producer could use to create a band that would produce songs designed to be as profitable as possible. We added few plots to determine which characteristics were the most important to the success of a track, and then we added the tool itself, predicting the popularity of the song on a scale of 1 to 5, 5 being a probable huge hit.
 
