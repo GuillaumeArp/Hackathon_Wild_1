@@ -71,7 +71,7 @@ def home():
     
     st.markdown("<h2 style = 'text-align : center'> About this project </h2>", unsafe_allow_html=True)
 
-    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'This project was completed during a 29 hours hackathon, and the subject is music.'
     'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
     ''
