@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
-st.set_page_config(page_icon=':musical_note:')
+st.set_page_config(page_title='Data Yoyo', page_icon=':musical_note:')
 
 st.markdown("<h1 style='text-align: center;'>Music Popularity Analysis</h1>", unsafe_allow_html=True)
 
@@ -71,7 +71,7 @@ def home():
     
     st.markdown("<h2 style = 'text-align : center'> About this project </h2>", unsafe_allow_html=True)
 
-    'This project was completed during a 33 hours hackathon, and the subject is music.'
+    'This project was completed during a 29 hours hackathon, and the subject is music.'
     'We tried to determine what makes a music track popular, and to estimate the popularity of a track by tweaking its characteristics.'
     'This app is brought to you by the awesome Data Yoyo Team:'
     ''
